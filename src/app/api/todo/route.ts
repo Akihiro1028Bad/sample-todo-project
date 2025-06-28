@@ -13,7 +13,7 @@ async function main() {
 }
 
 // Todo取得
-export const GET = async (req: Request, res: NextResponse) => {
+export const GET = async (req: Request) => {
     try {
         await main();
         const todos = await prisma.todo.findMany();
@@ -26,7 +26,7 @@ export const GET = async (req: Request, res: NextResponse) => {
 };
 
 // Todoの作成
-export const POST = async (req: Request, res: NextResponse) => {
+export const POST = async (req: Request) => {
     try {
         const { title, content } = await req.json();
 
